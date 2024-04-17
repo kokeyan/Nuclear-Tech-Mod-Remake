@@ -790,7 +790,10 @@ class NuclearItemModelProvider(
         simpleItem(NTechItems.bombIgniterFatMan.get())
         simpleItem(NTechItems.plutoniumCore.get())
         simpleItem(NTechItems.detonator.get())
+        simpleItem(NTechItems.multiDetonator.get())
         simpleItem(NTechItems.designator.get())
+        simpleItem(NTechItems.antiBallisticMissile.get())
+        simpleItemNamed(NTechItems.antiBallisticMissileShort.get(), NTechItems.antiBallisticMissile.get())
         simpleItem(NTechItems.heMissile.get())
         simpleItem(NTechItems.incendiaryMissile.get())
         simpleItem(NTechItems.clusterMissile.get())
@@ -876,6 +879,13 @@ class NuclearItemModelProvider(
         getBuilder(NTechBlockItems.glowingMushroomStem.id.path).parent(cubeAll).texture("all", blockTexture(NTechBlocks.glowingMushroomStem.get()))
         simpleItem(NTechBlockItems.steamPress.get())
         // TODO make a template type of thing
+        specialEntityItem(NTechBlockItems.radar.get()).transforms()
+            .transform(ItemTransforms.TransformType.GUI).rotation(30F, 45F, 0F).translation(-3F, -1F, 0F).scale(.225F, .225F, .225F).end()
+            .transform(ItemTransforms.TransformType.GROUND).translation(0F, 3F, 0F).scale(0.125F, 0.125F, 0.125F).end()
+            .transform(ItemTransforms.TransformType.HEAD).rotation(0F, 180F, 0F).end()
+            .transform(ItemTransforms.TransformType.FIXED).rotation(0F, 180F, 0F).scale(0.25F, 0.25F, 0.25F).end()
+            .transform(ItemTransforms.TransformType.THIRD_PERSON_RIGHT_HAND).rotation(75F, 315F, 0F).translation(0F, 5F, 0F).scale(0.1875F, 0.1875F, 0.1875F).end()
+            .transform(ItemTransforms.TransformType.FIRST_PERSON_RIGHT_HAND).rotation(0F, 315F, 0F).scale(.2F, .2F, .2F).end().end()
         specialEntityItem(NTechBlockItems.assemblerPlacer.get()).transforms()
             .transform(ItemTransforms.TransformType.GUI).rotation(30F, 45F, 0F).translation(-3F, -1F, 0F).scale(.225F, .225F, .225F).end()
             .transform(ItemTransforms.TransformType.GROUND).translation(0F, 3F, 0F).scale(0.125F, 0.125F, 0.125F).end()
@@ -978,6 +988,12 @@ class NuclearItemModelProvider(
         getBuilder(item.registryName!!.path)
             .parent(generatedItem)
             .texture("layer0", itemTexture(item))
+    }
+
+    private fun simpleItemNamed(item: Item, itemT: Item) {
+        getBuilder(item.registryName!!.path)
+            .parent(generatedItem)
+            .texture("layer0", itemTexture(itemT))
     }
 
     private fun bombKit(item: Item) {

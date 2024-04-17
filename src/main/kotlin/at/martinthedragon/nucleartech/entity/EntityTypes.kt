@@ -16,6 +16,8 @@ object EntityTypes {
     val missileCluster = ENTITIES.registerK("cluster_missile") { EntityType.Builder.of(::ClusterMissile, MobCategory.MISC).fireImmune().sized(1.5F, 1.5F).clientTrackingRange(100).build("cluster_missile") }
     val missileClusterStrong = ENTITIES.registerK("strong_cluster_missile") { EntityType.Builder.of(::StrongClusterMissile, MobCategory.MISC).fireImmune().sized(1.5F, 1.5F).clientTrackingRange(100).build("strong_cluster_missile") }
     val missileDrill = ENTITIES.registerK("drill_missile") { EntityType.Builder.of(::DrillMissile, MobCategory.MISC).fireImmune().sized(1.5F, 1.5F).clientTrackingRange(100).build("drill_missile") }
+    val missileAntiBalistic = ENTITIES.registerK("anti_balistic_missile") { EntityType.Builder.of(::AntiBallisticMissile, MobCategory.MISC).fireImmune().sized(1.5F, 1.5F).clientTrackingRange(100).build("anti_balistic_missile") }
+    val missileAntiBallisticShort = ENTITIES.registerK("anti_ballistic_missile_short") { EntityType.Builder.of(::AntiBallisticMissileShort, MobCategory.MISC).fireImmune().sized(1.5F, 1.5F).clientTrackingRange(100).build("anti_balistic_missile") }
     val missileHE = ENTITIES.registerK("he_missile") { EntityType.Builder.of(::HEMissile, MobCategory.MISC).fireImmune().sized(1.5F, 1.5F).clientTrackingRange(100).build("he_missile") }
     val missileHEStrong = ENTITIES.registerK("strong_missile") { EntityType.Builder.of(::StrongHEMissile, MobCategory.MISC).fireImmune().sized(1.5F, 1.5F).clientTrackingRange(100).build("strong_missile") }
     val missileIncendiary = ENTITIES.registerK("incendiary_missile") { EntityType.Builder.of(::IncendiaryMissile, MobCategory.MISC).fireImmune().sized(1.5F, 1.5F).clientTrackingRange(100).build("incendiary_missile") }

@@ -46,6 +46,8 @@ object SpecialModels : ResourceManagerReloadListener {
     val MUSHROOM_CLOUD = registerBakedModel(modelLoc("mushroom_cloud/mush"), bakedModel())
     val OIL_DERRICK = registerModel(modelLoc("oil_derrick/oil_derrick"), simpleModel())
     val PUMPJACK = registerModel(modelLoc("pumpjack/pumpjack"), simpleModel())
+    val RADAR_DISH = registerModel(modelLoc("radar/radar_dish"), simpleModel())
+    val RADAR_BASE = registerModel(modelLoc("radar/radar_base"), simpleModel())
     val RBMK_COMMON_COLUMN = registerBakedModel(modelLoc("rbmk/column"), bakedModel())
     val RBMK_CONSOLE = registerModel(modelLoc("rbmk/console"), simpleModel())
     val RBMK_CONTROL_ROD_COLUMN = registerBakedModel(modelLoc("rbmk/control_rod_column"), bakedModel())

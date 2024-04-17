@@ -58,6 +58,7 @@ abstract class AbstractMissile : Entity, ChunkLoader {
     open val renderTexture: ResourceLocation get() = missileTexture(type.registryName!!.path)
     open val renderModel: ResourceLocation = MODEL_MISSILE_V2
     open val renderScale: Float = 1F
+    protected var isEntityTick = false
     abstract fun onImpact()
 
     var health = 50F
@@ -86,13 +87,13 @@ abstract class AbstractMissile : Entity, ChunkLoader {
         if (!level.isClientSide && currentSegmentIndex != -1) for (chunk in forcedChunks.toList()) unForceChunk(chunk)
     }
 
-    private var velocity = 0
+    open var velocity = 0
     private var decelerationY = 0.0
     private var accelerationXZ = 0.0
 
     override fun tick() {
         super.tick()
-
+        if (isEntityTick) return
         if (velocity < 1) velocity = 1
         if (tickCount > 40) velocity = 3
         else if (tickCount > 20) velocity = 2
@@ -127,7 +128,7 @@ abstract class AbstractMissile : Entity, ChunkLoader {
     }
 
     // TODO smooth rotations
-    private fun updateRotation() {
+    protected fun updateRotation() {
         val movement = deltaMovement
         xRot = (atan2(movement.y, movement.horizontalDistance()) * 180 / PI).toFloat()
         while (xRot - xRotO < -180F) xRotO -= 360F
@@ -143,7 +144,7 @@ abstract class AbstractMissile : Entity, ChunkLoader {
     private var segments = listOf<List<ChunkPos>>() // segments in size of 16 chunks
     var currentSegmentIndex = -1
 
-    private fun manageForcedChunks() {
+    protected fun manageForcedChunks() {
         if (segments.isEmpty()) return
 
         val currentChunkPos = ChunkPos(blockPosition())
@@ -320,6 +321,7 @@ abstract class AbstractMissile : Entity, ChunkLoader {
         fun missileTexture(name: String) = ntm("textures/entity/missiles/$name.png")
         fun missileModel(name: String) = ntm("models/other/missiles/$name.obj")
 
+        val MODEL_MISSILE_RIM67B = missileModel("missile_rim67b")
         val MODEL_MISSILE_V2 = missileModel("missile_v2")
         val MODEL_MISSILE_STRONG = missileModel("missile_strong")
         val MODEL_MISSILE_HUGE = missileModel("missile_huge")

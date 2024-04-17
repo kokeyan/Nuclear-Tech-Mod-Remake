@@ -143,6 +143,7 @@ object ClientRegistries {
             registerBlockEntityRenderer(BlockEntityTypes.littleBoyBlockEntityType.get(), ::LittleBoyRenderer)
             registerBlockEntityRenderer(BlockEntityTypes.oilDerrickBlockEntityType.get(), ::OilDerrickRenderer)
             registerBlockEntityRenderer(BlockEntityTypes.pumpjackBlockEntityType.get(), ::PumpjackRenderer)
+            registerBlockEntityRenderer(BlockEntityTypes.radarBlockEntityType.get(), ::RadarRenderer)
             registerBlockEntityRenderer(BlockEntityTypes.rbmkAbsorberBlockEntityType.get(), ::RBMKAbsorberRenderer)
             registerBlockEntityRenderer(BlockEntityTypes.rbmkAutoControlBlockEntityType.get(), ::RBMKAutoControlRenderer)
             registerBlockEntityRenderer(BlockEntityTypes.rbmkBlankBlockEntityType.get(), ::RBMKBlankRenderer)

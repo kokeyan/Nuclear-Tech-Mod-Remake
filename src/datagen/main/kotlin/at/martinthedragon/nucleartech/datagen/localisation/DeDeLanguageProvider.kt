@@ -149,6 +149,8 @@ class DeDeLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
         addBlock(NTechBlocks.oilDerrick, "Ölbohrturm")
         addBlock(NTechBlocks.pumpjack, "Pferdekopfpumpe")
         addBlockDesc11(NTechBlocks.pumpjack, "Der echte Moskito")
+        //@TODO(DeDe)
+        addBlock(NTechBlocks.radar, "Radar")
         addBlock(NTechBlocks.safe, "Panzerschrank")
         addBlock(NTechBlocks.centrifuge, "Zentrifuge")
         addBlock(NTechBlocks.ironAnvil, "Eisenamboss")
@@ -255,8 +257,8 @@ class DeDeLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
         addItemDesc(
             NTechItems.semtexBar,
             "Semtex H Plastiksprengstoff\n" +
-                    "Performanter Sprengstoff für viele Zwecke.\n" +
-                    "Essbar"
+                "Performanter Sprengstoff für viele Zwecke.\n" +
+                "Essbar"
         )
 
         addItem(NTechItems.lithiumCube, "Lithiumwürfel")
@@ -394,8 +396,8 @@ class DeDeLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
         addItemDesc(
             NTechItems.euphemiumNugget,
             "Ein kleines Stück von einem pinken Metall.\n" +
-                    "Seine Eigenschaften sind immer noch unbekannt.\n" +
-                    "Gehe vorsichtig damit um."
+                "Seine Eigenschaften sind immer noch unbekannt.\n" +
+                "Gehe vorsichtig damit um."
         )
 
         addItem(NTechItems.advancedAlloyPlate, "Fortgeschrittene Legierungsplatte")
@@ -455,8 +457,8 @@ class DeDeLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
         addItemDesc(
             NTechItems.entanglementKit,
             "Teleporter Crafting-Gegenstand.\n" +
-                    "Ermöglicht Dimensionsverschiebung über einen\n" +
-                    "berylliumverstärkten Ressourcenscanner."
+                "Ermöglicht Dimensionsverschiebung über einen\n" +
+                "berylliumverstärkten Ressourcenscanner."
         )
         addItem(NTechItems.stabilizerComponent, "Stabilisatorkomponente")
         addItem(NTechItems.emitterComponent, "Emitterkomponente")
@@ -803,9 +805,9 @@ class DeDeLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
         addItemDesc(
             NTechItems.machineTemplateFolder,
             "Maschinenvorlagen: Papier + Farbstoff\n" +
-                    "Flüssigkeit-IDs: Eisenplatte + Farbstoff\n" +
-                    "Pressstempel: Flacher Stempel\n" +
-                    "Sirenentracks: Isolator + Stahlplatte"
+                "Flüssigkeit-IDs: Eisenplatte + Farbstoff\n" +
+                "Pressstempel: Flacher Stempel\n" +
+                "Sirenentracks: Isolator + Stahlplatte"
         )
 
         addItem(NTechItems.sirenTrackHatchSiren, "Hatch Siren")
@@ -856,10 +858,16 @@ class DeDeLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
         addItemDesc(NTechItems.plutoniumCore, "Wird gebraucht für:\nFat Man\nIvy Mike\nTsar Bombe")
         addItem(NTechItems.detonator, "Fernzünder")
         addItemDesc(NTechItems.detonator, "Shift-Rechtsklick auf einen Sprengstoff um die Position zu setzen,\nRechtsklick um zu sprengen!")
+        //@TODO(DeDe)
+        addItem(NTechItems.multiDetonator, "Multi Detonator")
+        addItemDesc(NTechItems.multiDetonator, "Shift-Rechtsklick auf einen Sprengstoff um die Position zu setzen,\nRechtsklick um zu sprengen!")
         addItem(NTechItems.littleBoyKit, "Little Boy Kit")
         addItem(NTechItems.fatManKit, "Fat Man Kit")
 
         addItem(NTechItems.designator, "Kurzdistanz Zielmarkierer")
+        addItem(NTechItems.antiBallisticMissile, "Antibalistische Rakete")
+        //@TODO(DeDe)
+        addItem(NTechItems.antiBallisticMissileShort, "Antibalistische Rakete [Short Range]")
         addItem(NTechItems.heMissile, "HE Rakete")
         addItem(NTechItems.incendiaryMissile, "Brandrakete")
         addItem(NTechItems.clusterMissile, "Streurakete")
@@ -984,6 +992,8 @@ class DeDeLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
         addMenuType(MenuTypes.oilWellMenu, "Ölpumpe")
         add(LangKeys.CONTAINER_OIL_DERRICK, "Ölbohrturm")
         add(LangKeys.CONTAINER_PUMPJACK, "Pferdekopfpumpe")
+        //@TODO(DeDe)
+        add(LangKeys.CONTAINER_RADAR, "Radar")
         addMenuType(MenuTypes.centrifugeMenu, "Zentrifuge")
         addMenuType(MenuTypes.rbmkRodMenu, "RBMK Brennstäbe")
         add(LangKeys.CONTAINER_RBMK_REASIM_ROD, "RBMK ReaSim Brennstäbe")

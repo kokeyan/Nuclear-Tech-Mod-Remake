@@ -774,12 +774,15 @@ object NTechItems {
     val bombIgniterFatMan = ITEMS.registerK("bomb_igniter_fat_man") { AutoTooltippedItem(Properties().tab(CreativeTabs.Bombs).stacksTo(1)) }
     val plutoniumCore = ITEMS.registerK("plutonium_core") { Item(Properties().tab(CreativeTabs.Bombs).stacksTo(1)) }
     val detonator = ITEMS.registerK("detonator") { DetonatorItem(Properties().tab(CreativeTabs.Bombs).stacksTo(1)) }
+    val multiDetonator = ITEMS.registerK("multi_detonator") { MultiDetonatorItem(Properties().tab(CreativeTabs.Bombs).stacksTo(1)) }
     val littleBoyKit = ITEMS.registerK("little_boy_kit") { BombKitItem(mapOf(NTechBlockItems.littleBoy to 1) + LittleBoyBlock.requiredComponents, 0, 0x0026FF, Properties().tab(CreativeTabs.Bombs)) }
     val fatManKit = ITEMS.registerK("fat_man_kit") { BombKitItem(mapOf(NTechBlockItems.fatMan to 1) + FatManBlock.requiredComponents, 0, 0xFFD800, Properties().tab(CreativeTabs.Bombs)) }
 
     // Rocketry: Missiles and Satellites
 
     val designator = ITEMS.registerK("designator") { DesignatorItem(Properties().tab(CreativeTabs.Rocketry).stacksTo(1)) }
+    val antiBallisticMissile = ITEMS.registerK("anti_ballistic_missile") { MissileItem(::AntiBallisticMissile, Properties().tab(CreativeTabs.Rocketry)) }
+    val antiBallisticMissileShort = ITEMS.registerK("anti_ballistic_missile_short") { MissileItem(::AntiBallisticMissileShort, Properties().tab(CreativeTabs.Rocketry)) }
     val heMissile = ITEMS.registerK("he_missile") { MissileItem(::HEMissile, Properties().tab(CreativeTabs.Rocketry)) }
     val incendiaryMissile = ITEMS.registerK("incendiary_missile") { MissileItem(::IncendiaryMissile, Properties().tab(CreativeTabs.Rocketry)) }
     val clusterMissile = ITEMS.registerK("cluster_missile") { MissileItem(::ClusterMissile, Properties().tab(CreativeTabs.Rocketry)) }

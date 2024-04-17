@@ -200,6 +200,7 @@ object NTechBlockItems {
     val largeCoolingTower = ITEMS.registerK("large_cooling_tower") { SpecialModelMultiBlockPlacerItem(NTechBlocks.largeCoolingTower.get(), ::LargeCoolingTowerBlockEntity, LargeCoolingTowerBlock::placeMultiBlock, Item.Properties().tab(CreativeTabs.Machines), 4F) }
     val oilDerrickPlacer = ITEMS.registerK("oil_derrick") { SpecialModelMultiBlockPlacerItem(NTechBlocks.oilDerrick.get(), ::OilDerrickBlockEntity, OilDerrickBlock::placeMultiBlock, Item.Properties().tab(CreativeTabs.Machines)) }
     val pumpjackPlacer = ITEMS.registerK("pumpjack") { PumpjackPlacerItem(NTechBlocks.pumpjack.get(), ::PumpjackBlockEntity, PumpjackBlock::placeMultiBlock, Item.Properties().tab(CreativeTabs.Machines)) }
+    val radar = ITEMS.registerK("radar") { BlockItem(NTechBlocks.radar.get(), Item.Properties().tab(CreativeTabs.Machines)) }
     val centrifugePlacer = ITEMS.registerK("centrifuge") { SpecialModelMultiBlockPlacerItem(NTechBlocks.centrifuge.get(), ::CentrifugeBlockEntity, CentrifugeBlock::placeMultiBlock, Item.Properties().tab(CreativeTabs.Machines)) }
 
     val ironAnvil = ITEMS.registerK("iron_anvil") { BlockItem(NTechBlocks.ironAnvil.get(), Item.Properties().tab(CreativeTabs.Machines)) }

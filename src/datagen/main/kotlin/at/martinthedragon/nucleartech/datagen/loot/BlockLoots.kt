@@ -262,6 +262,7 @@ class BlockLoots : BlockLoot() {
         dropSelf(NTechBlocks.largeCoolingTower.get())
         dropSelf(NTechBlocks.oilDerrick.get())
         dropSelf(NTechBlocks.pumpjack.get())
+        dropSelf(NTechBlocks.radar.get())
         dropSelf(NTechBlocks.centrifuge.get())
 
         add(NTechBlocks.rbmkColumn.get(), noDrop())
