@@ -1,5 +1,8 @@
 package at.martinthedragon.nucleartech.item
 
+import at.martinthedragon.nucleartech.block.entity.reactors.ReactorBlockEntity
+import at.martinthedragon.nucleartech.block.multi.MultiBlockPart
+import at.martinthedragon.nucleartech.block.multi.MultiBlockPort
 import at.martinthedragon.nucleartech.block.rbmk.RBMKPart
 import net.minecraft.world.InteractionResult
 import net.minecraft.world.item.Item
@@ -11,10 +14,17 @@ class MeltdownToolItem(properties: Properties) : Item(properties) {
         val clickedPos = context.clickedPos
         val blockState = level.getBlockState(clickedPos)
         val block = blockState.block
-
-        val rbmkBase = if (block is RBMKPart) block.getTopRBMKBase(level, clickedPos, blockState) ?: return InteractionResult.FAIL else return InteractionResult.PASS
-        if (!level.isClientSide) rbmkBase.meltdown()
-
+        val blockEntity = level.getBlockEntity(clickedPos)
+        if (block is RBMKPart) {
+            val rbmkBase = block.getTopRBMKBase(level, clickedPos, blockState) ?: return InteractionResult.FAIL
+            if (!level.isClientSide) rbmkBase.meltdown()
+        } else if (blockEntity is ReactorBlockEntity) {
+            blockEntity.meltdown()
+        } else if (blockEntity is MultiBlockPart.MultiBlockPartBlockEntity) {
+            level.getBlockEntity(blockEntity.core)?.let {
+                if (it is ReactorBlockEntity) it.meltdown()
+            }
+        }
         return InteractionResult.sidedSuccess(level.isClientSide)
     }
 }

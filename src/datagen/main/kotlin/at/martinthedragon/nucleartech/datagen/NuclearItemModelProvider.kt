@@ -8,6 +8,7 @@ import at.martinthedragon.nucleartech.extensions.appendToPath
 import at.martinthedragon.nucleartech.fluid.NTechFluids
 import at.martinthedragon.nucleartech.item.*
 import at.martinthedragon.nucleartech.ntm
+import at.martinthedragon.nucleartech.rendering.SpecialModels
 import net.minecraft.client.renderer.block.model.ItemTransforms
 import net.minecraft.data.DataGenerator
 import net.minecraft.resources.ResourceLocation
@@ -879,13 +880,18 @@ class NuclearItemModelProvider(
         getBuilder(NTechBlockItems.glowingMushroomStem.id.path).parent(cubeAll).texture("all", blockTexture(NTechBlocks.glowingMushroomStem.get()))
         simpleItem(NTechBlockItems.steamPress.get())
         // TODO make a template type of thing
+        specialEntityItem(NTechBlockItems.reactorMk0Placer.get()).transforms()
+            .transform(ItemTransforms.TransformType.GUI).rotation(30F, 225F, 0F).translation(3F, -2F, 0F).scale(.17F).end()
+            .transform(ItemTransforms.TransformType.GROUND).translation(0F, 3F, 0F).scale(.25F, .25F, .25F).end()
+            .transform(ItemTransforms.TransformType.FIXED).rotation(0F, 90F, 0F).scale(.5F).end()
+            .transform(ItemTransforms.TransformType.THIRD_PERSON_RIGHT_HAND).rotation(75F, 45F, 0F).translation(0F, 2.5F, 0F).scale(.375F, .375F, .375F).end()
+            .transform(ItemTransforms.TransformType.FIRST_PERSON_RIGHT_HAND).rotation(0F, 45F, 0F).scale(.4F, .4F, .4F).end().end()
         specialEntityItem(NTechBlockItems.radar.get()).transforms()
-            .transform(ItemTransforms.TransformType.GUI).rotation(30F, 45F, 0F).translation(-3F, -1F, 0F).scale(.225F, .225F, .225F).end()
-            .transform(ItemTransforms.TransformType.GROUND).translation(0F, 3F, 0F).scale(0.125F, 0.125F, 0.125F).end()
-            .transform(ItemTransforms.TransformType.HEAD).rotation(0F, 180F, 0F).end()
-            .transform(ItemTransforms.TransformType.FIXED).rotation(0F, 180F, 0F).scale(0.25F, 0.25F, 0.25F).end()
-            .transform(ItemTransforms.TransformType.THIRD_PERSON_RIGHT_HAND).rotation(75F, 315F, 0F).translation(0F, 5F, 0F).scale(0.1875F, 0.1875F, 0.1875F).end()
-            .transform(ItemTransforms.TransformType.FIRST_PERSON_RIGHT_HAND).rotation(0F, 315F, 0F).scale(.2F, .2F, .2F).end().end()
+            .transform(ItemTransforms.TransformType.GUI).rotation(30F, 225F, 0F).translation(3F, -2F, 0F).scale(.34F).end()
+            .transform(ItemTransforms.TransformType.GROUND).translation(0F, 3F, 0F).scale(.25F, .25F, .25F).end()
+            .transform(ItemTransforms.TransformType.FIXED).rotation(0F, 90F, 0F).scale(.5F).end()
+            .transform(ItemTransforms.TransformType.THIRD_PERSON_RIGHT_HAND).rotation(75F, 45F, 0F).translation(0F, 2.5F, 0F).scale(.375F, .375F, .375F).end()
+            .transform(ItemTransforms.TransformType.FIRST_PERSON_RIGHT_HAND).rotation(0F, 45F, 0F).scale(.4F, .4F, .4F).end().end()
         specialEntityItem(NTechBlockItems.assemblerPlacer.get()).transforms()
             .transform(ItemTransforms.TransformType.GUI).rotation(30F, 45F, 0F).translation(-3F, -1F, 0F).scale(.225F, .225F, .225F).end()
             .transform(ItemTransforms.TransformType.GROUND).translation(0F, 3F, 0F).scale(0.125F, 0.125F, 0.125F).end()

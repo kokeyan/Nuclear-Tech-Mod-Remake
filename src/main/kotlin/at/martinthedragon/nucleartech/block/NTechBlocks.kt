@@ -4,6 +4,7 @@ import at.martinthedragon.nucleartech.RegistriesAndLifecycle.BLOCKS
 import at.martinthedragon.nucleartech.block.multi.MultiBlockPart
 import at.martinthedragon.nucleartech.block.multi.MultiBlockPort
 import at.martinthedragon.nucleartech.block.rbmk.*
+import at.martinthedragon.nucleartech.block.reactors.ReactorMk0Block
 import at.martinthedragon.nucleartech.hazard.HazardRegistry
 import at.martinthedragon.nucleartech.registerK
 import net.minecraft.core.BlockPos
@@ -208,6 +209,8 @@ object NTechBlocks {
     val pumpjack = BLOCKS.registerK("pumpjack") { PumpjackBlock(Properties.of(METAL).strength(5F).requiresCorrectToolForDrops().sound(SoundType.METAL).noOcclusion()) }
     val radar = BLOCKS.registerK("radar") { RadarBlock(Properties.of(METAL).strength(5F).requiresCorrectToolForDrops().sound(SoundType.METAL).noOcclusion()) }
     val centrifuge = BLOCKS.registerK("centrifuge") { CentrifugeBlock(Properties.of(METAL).strength(5F).requiresCorrectToolForDrops().sound(SoundType.METAL).noOcclusion()) }
+
+    val reactorMk0 = BLOCKS.registerK("reactor_mk0") { ReactorMk0Block(Properties.of(METAL).strength(5F).requiresCorrectToolForDrops().sound(SoundType.METAL).noOcclusion()) }
 
     val ironAnvil = BLOCKS.registerK("iron_anvil") { AnvilBlock(1, Properties.of(METAL).strength(5F, 100F).requiresCorrectToolForDrops().sound(SoundType.ANVIL)) }
     val leadAnvil = BLOCKS.registerK("lead_anvil") { AnvilBlock(1, Properties.of(METAL).strength(5F, 100F).requiresCorrectToolForDrops().sound(SoundType.ANVIL)) }

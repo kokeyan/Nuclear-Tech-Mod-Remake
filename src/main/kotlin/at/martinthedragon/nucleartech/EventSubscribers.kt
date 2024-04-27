@@ -23,6 +23,7 @@ import net.minecraft.world.entity.item.ItemEntity
 import net.minecraftforge.event.AddReloadListenerEvent
 import net.minecraftforge.event.AttachCapabilitiesEvent
 import net.minecraftforge.event.ItemAttributeModifierEvent
+import net.minecraftforge.event.RegisterCommandsEvent
 import net.minecraftforge.event.TickEvent
 import net.minecraftforge.event.entity.EntityJoinWorldEvent
 import net.minecraftforge.event.entity.EntityLeaveWorldEvent
@@ -44,7 +45,10 @@ object EventSubscribers {
         event.addListener(FalloutTransformationManager)
         event.addListener(FluidTraitManager).also { FluidTraitManager.context = context }
     }
-
+    @SubscribeEvent @JvmStatic
+    fun registerCommand(event: RegisterCommandsEvent) {
+        NTechCommands.register(event.dispatcher)
+    }
     @SubscribeEvent @JvmStatic
     fun attachCapabilitiesEvent(event: AttachCapabilitiesEvent<Entity>) {
         if (event.`object` is LivingEntity)

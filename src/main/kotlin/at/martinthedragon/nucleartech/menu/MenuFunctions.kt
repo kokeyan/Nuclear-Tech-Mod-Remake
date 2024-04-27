@@ -7,6 +7,7 @@ import at.martinthedragon.nucleartech.block.entity.UpgradeableMachine
 import at.martinthedragon.nucleartech.capability.CapabilityCache
 import at.martinthedragon.nucleartech.extensions.ifPresentInline
 import at.martinthedragon.nucleartech.fluid.trait.FluidTraitManager
+import at.martinthedragon.nucleartech.item.RBMKRodItem
 import at.martinthedragon.nucleartech.item.upgrades.MachineUpgradeItem
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap
 import net.minecraft.client.Minecraft
@@ -124,7 +125,7 @@ class MenuMoveFunctionContext(private val menu: AbstractContainerMenu, val itemS
 
     fun supportsEnergyCondition() = { _: ItemStack -> hasCapability(CapabilityEnergy.ENERGY) }
     fun supportsFluidsCondition() = { _: ItemStack -> hasCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY) }
-
+    fun isFuel() = { stack: ItemStack -> stack.item is RBMKRodItem }
     fun containsFluidCondition(fluid: Fluid) = { _: ItemStack -> getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY).ifPresentInline { !it.drain(FluidStack(fluid, Int.MAX_VALUE), IFluidHandler.FluidAction.SIMULATE).isEmpty } == true }
     fun canDrainTankCondition(outputTank: FluidTank) = { _: ItemStack -> getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY).ifPresentInline { it.fill(FluidStack(outputTank.fluid.rawFluid, 1), IFluidHandler.FluidAction.SIMULATE) > 0 || it.fill(FluidStack(outputTank.fluid.rawFluid, outputTank.capacity), IFluidHandler.FluidAction.SIMULATE) > 0 } == true }
     fun canFillTankCondition(inputTank: FluidTank) = { _: ItemStack -> getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY).ifPresentInline { !it.drain(FluidStack(inputTank.fluid.rawFluid, 1), IFluidHandler.FluidAction.SIMULATE).isEmpty || !it.drain(FluidStack(inputTank.fluid.rawFluid, inputTank.capacity), IFluidHandler.FluidAction.SIMULATE).isEmpty } == true }

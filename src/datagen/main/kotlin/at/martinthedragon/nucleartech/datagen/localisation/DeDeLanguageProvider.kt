@@ -994,6 +994,8 @@ class DeDeLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
         add(LangKeys.CONTAINER_PUMPJACK, "Pferdekopfpumpe")
         //@TODO(DeDe)
         add(LangKeys.CONTAINER_RADAR, "Radar")
+        //@TODO(DeDe)
+        add(LangKeys.CONTAINER_REACTOR_MK0, "Reactor Mk0")
         addMenuType(MenuTypes.centrifugeMenu, "Zentrifuge")
         addMenuType(MenuTypes.rbmkRodMenu, "RBMK Brennstäbe")
         add(LangKeys.CONTAINER_RBMK_REASIM_ROD, "RBMK ReaSim Brennstäbe")

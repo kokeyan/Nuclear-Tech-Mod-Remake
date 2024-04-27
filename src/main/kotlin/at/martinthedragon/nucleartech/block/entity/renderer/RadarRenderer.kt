@@ -23,7 +23,7 @@ class RadarRenderer(val context: BlockEntityRendererProvider.Context): BlockEnti
         matrix.pushPose()
         matrix.mulPose(Vector3f.YP.rotationDegrees(180f))
         matrix.translate(-.5, -.0, -.5)
-        base.render(matrix, buffers, RenderType::entityCutoutNoCull, light, overlay, partials, MultipartTransforms.EMPTY)
+        base.render(matrix, buffers, RenderType::entityCutout, light, overlay, partials, MultipartTransforms.EMPTY)
         matrix.popPose()
     }
 }

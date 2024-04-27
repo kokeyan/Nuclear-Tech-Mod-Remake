@@ -48,6 +48,7 @@ object SpecialModels : ResourceManagerReloadListener {
     val PUMPJACK = registerModel(modelLoc("pumpjack/pumpjack"), simpleModel())
     val RADAR_DISH = registerModel(modelLoc("radar/radar_dish"), simpleModel())
     val RADAR_BASE = registerModel(modelLoc("radar/radar_base"), simpleModel())
+    val REACTOR_MK0 = registerModel(reactorLoc("mk0/test"), simpleModel())
     val RBMK_COMMON_COLUMN = registerBakedModel(modelLoc("rbmk/column"), bakedModel())
     val RBMK_CONSOLE = registerModel(modelLoc("rbmk/console"), simpleModel())
     val RBMK_CONTROL_ROD_COLUMN = registerBakedModel(modelLoc("rbmk/control_rod_column"), bakedModel())
@@ -63,6 +64,7 @@ object SpecialModels : ResourceManagerReloadListener {
     val RBMK_ROD_RODS = registerModel(modelLoc("rbmk/rods"), simpleModel())
 
     private fun modelLoc(path: String) = ntm("models/other/$path.obj")
+    private fun reactorLoc(path: String) = ntm("models/other/reactors/$path.obj")
 
     private fun simpleModel(detectCullableFaces: Boolean = false, diffuseLighting: Boolean = false, flipV: Boolean = true, ambientToFullbright: Boolean = true, materialLibraryOverrideLocation: String? = null): (ResourceLocation) -> SimpleRenderable =
         { id -> OBJLoader.INSTANCE.loadModel(OBJModel.ModelSettings(id, detectCullableFaces, diffuseLighting, flipV, ambientToFullbright, materialLibraryOverrideLocation)).bakeRenderable(StandaloneModelConfiguration.create(id, mapOf("#texture" to ResourceLocation(id.namespace, id.path.removeSuffix(".obj").removePrefix("models/"))))) }

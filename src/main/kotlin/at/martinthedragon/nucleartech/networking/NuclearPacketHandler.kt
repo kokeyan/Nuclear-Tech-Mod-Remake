@@ -28,6 +28,7 @@ object NuclearPacketHandler {
         registerMessage(SetRBMKConsoleControlRodLevelMessage::decode, NetworkDirection.PLAY_TO_SERVER)
         registerMessage(SetRBMKConsoleScreenAssignedColumnsMessage::decode, NetworkDirection.PLAY_TO_SERVER)
         registerMessage(SpawnNuclearExplosionMessage::decode, NetworkDirection.PLAY_TO_SERVER)
+        registerMessage(Mk0FluxUpdatedMessage::decode, NetworkDirection.PLAY_TO_SERVER)
 
         registerMessage(ContainerMenuUpdateMessage::decode, NetworkDirection.PLAY_TO_CLIENT)
 
