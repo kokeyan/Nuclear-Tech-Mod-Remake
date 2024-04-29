@@ -1,18 +1,23 @@
 package at.martinthedragon.nucleartech
 
 import at.martinthedragon.nucleartech.api.explosion.ExplosionLargeParams
-import at.martinthedragon.nucleartech.explosion.Explosions
 import at.martinthedragon.nucleartech.api.explosion.NuclearExplosionMk4Params
 import at.martinthedragon.nucleartech.explosion.ExplosionLarge
+import at.martinthedragon.nucleartech.explosion.Explosions
+import at.martinthedragon.nucleartech.fallout.FalloutTransformation
+import at.martinthedragon.nucleartech.logging.debugY
 import com.mojang.brigadier.CommandDispatcher
 import com.mojang.brigadier.arguments.FloatArgumentType
 import com.mojang.brigadier.arguments.IntegerArgumentType
 import com.mojang.brigadier.builder.LiteralArgumentBuilder
 import com.mojang.brigadier.exceptions.CommandSyntaxException
-import com.mojang.brigadier.exceptions.SimpleCommandExceptionType
 import net.minecraft.commands.CommandSourceStack
 import net.minecraft.commands.Commands
+import net.minecraft.core.BlockPos
 import net.minecraft.network.chat.TextComponent
+import net.minecraft.world.level.block.state.BlockState
+import net.minecraft.world.phys.AABB
+import java.util.function.Function
 
 class NTechCommands {
     companion object {
@@ -32,8 +37,31 @@ class NTechCommands {
                         }
                         1
                     })))
+        private val decontaminationCommand: LiteralArgumentBuilder<CommandSourceStack> = Commands.literal("decontaminate")
+            .executes {
+                val source = it.source
+                val level = source.level
+                if (!source.hasPermission(2)) {
+                    try {
+                        source.playerOrException.sendMessage(TextComponent("You must have permission level \"2\""), it.source.playerOrException.uuid);
+                    } catch (ignored: CommandSyntaxException) {}
+                }
+                val pos = source.position
+                BlockPos.betweenClosedStream(
+                    AABB(pos.x - 50, pos.y - 50, pos.z - 50, pos.x + 50, pos.y + 50, pos.z + 50)
+                ).forEach { blockPos: BlockPos ->
+                    run {
+                        val blockState = level.getBlockState(blockPos)
+                        if (FalloutTransformation.isDecontamiTarget(blockState)) {
+                            level.setBlock(blockPos, FalloutTransformation.convertion(blockState), 3)
+                        }
+                    }
+                }
+                return@executes 1
+            }
         fun register(dispatcher: CommandDispatcher<CommandSourceStack>) {
             dispatcher.register(explosionCommand)
+            dispatcher.register(decontaminationCommand)
         }
     }
 }

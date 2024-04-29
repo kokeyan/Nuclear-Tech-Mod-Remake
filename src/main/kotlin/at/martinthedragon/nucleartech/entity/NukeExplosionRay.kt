@@ -81,7 +81,7 @@ class NukeExplosionRay(
                 val block = getBlockState(world, newBlockPos)
 
                 remaining -= if (block.material.isLiquid) 2.5F.pow(7.5F - fac.toFloat())
-                else block.getExplosionResistance(world, newBlockPos, null).pow(7.5F - fac.toFloat())
+                else block.getExplosionResistance(world, newBlockPos, null).pow(7.5F - fac.toFloat()) * 8
 
                 if (remaining > 0 && !block.isAir) lastPos = newPos
 

@@ -1,5 +1,11 @@
 package at.martinthedragon.nucleartech.fallout
 
+import at.martinthedragon.nucleartech.NuclearTech
+import at.martinthedragon.nucleartech.block.DeadGrassBlock
+import at.martinthedragon.nucleartech.block.HazardBlock
+import at.martinthedragon.nucleartech.block.NTechBlocks
+import at.martinthedragon.nucleartech.block.TrinititeBlock
+import at.martinthedragon.nucleartech.logging.debugY
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import com.google.gson.JsonParseException
@@ -8,6 +14,7 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.TagKey
 import net.minecraft.util.GsonHelper
 import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import net.minecraft.world.level.block.state.properties.Property
@@ -45,17 +52,12 @@ data class FalloutTransformation(
         return to
     }
 
-    private fun <T : Comparable<T>> applyPropertyIfPossible(from: BlockState, to: BlockState, property: Property<T>) {
-        if (!to.hasProperty(property) || !from.hasProperty(property)) return
-        to.setValue(property, from.getValue(property))
-    }
-
     sealed interface Target {
         fun matches(blockState: BlockState): Boolean
         fun saveToJson(json: JsonObject)
     }
 
-    data class BlockTarget(private val block: Block) : Target {
+    data class BlockTarget(public val block: Block) : Target {
         override fun matches(blockState: BlockState) = blockState.`is`(block)
 
         override fun saveToJson(json: JsonObject) {
@@ -110,6 +112,43 @@ data class FalloutTransformation(
     }
 
     companion object {
+        private val fatalBlocksConvertionUnfacing = mapOf<Block, BlockState>(
+            Pair(NTechBlocks.slakedSellafite.get(), Blocks.STONE.defaultBlockState()),
+            Pair(NTechBlocks.sellafite.get(), Blocks.STONE.defaultBlockState()),
+            Pair(NTechBlocks.hotSellafite.get(), Blocks.STONE.defaultBlockState()),
+            Pair(NTechBlocks.boilingSellafite.get(), Blocks.STONE.defaultBlockState()),
+            Pair(NTechBlocks.blazingSellafite.get(), Blocks.STONE.defaultBlockState()),
+            Pair(NTechBlocks.infernalSellafite.get(), Blocks.STONE.defaultBlockState()),
+            Pair(NTechBlocks.sellafiteCorium.get(), Blocks.STONE.defaultBlockState()),
+            Pair(NTechBlocks.deadGrass.get(), Blocks.GRASS_BLOCK.defaultBlockState()),
+            Pair(NTechBlocks.trinitite.get(), Blocks.SAND.defaultBlockState()),
+            Pair(NTechBlocks.redTrinitite.get(), Blocks.RED_SAND.defaultBlockState()),
+            Pair(NTechBlocks.blazingSellafite.get(), Blocks.STONE.defaultBlockState()),
+            Pair(NTechBlocks.charredPlanks.get(), Blocks.OAK_PLANKS.defaultBlockState())
+        )
+        private val fatalBlocksConvertionFacing = mapOf<Block, Block>(
+            Pair(NTechBlocks.charredLog.get(), Blocks.OAK_LOG)
+        )
+        fun convertion(from: BlockState): BlockState {
+            NuclearTech.LOGGER.debugY(
+                (fatalBlocksConvertionUnfacing[from.block] == null && fatalBlocksConvertionUnfacing[from.block] == null).toString()
+                + "  " +
+                    (!from.hasProperty(BlockStateProperties.FACING)).toString()
+            )
+            if (fatalBlocksConvertionUnfacing[from.block] == null && fatalBlocksConvertionUnfacing[from.block] == null) return from
+            return if (!from.hasProperty(BlockStateProperties.FACING))
+                fatalBlocksConvertionUnfacing[from.block]!!.block.defaultBlockState()
+            else {
+                val to = fatalBlocksConvertionFacing[from.block]!!.defaultBlockState()
+                applyPropertyIfPossible(from, to, BlockStateProperties.FACING)
+                return to
+            }
+        }
+        fun isDecontamiTarget(from: BlockState) = (from.block is HazardBlock || from.block is DeadGrassBlock || from.block is TrinititeBlock)
+        private fun <T : Comparable<T>> applyPropertyIfPossible(from: BlockState, to: BlockState, property: Property<T>) {
+            if (!to.hasProperty(property) || !from.hasProperty(property)) return
+            to.setValue(property, from.getValue(property))
+        }
         @JvmStatic fun fromJson(id: ResourceLocation, json: JsonObject): FalloutTransformation {
             // get JSON
             val targetsJson = GsonHelper.getAsJsonObject(json, "targets")

@@ -4,6 +4,7 @@ import at.martinthedragon.nucleartech.RegistriesAndLifecycle.BLOCK_ENTITIES
 import at.martinthedragon.nucleartech.block.NTechBlocks
 import at.martinthedragon.nucleartech.block.entity.rbmk.*
 import at.martinthedragon.nucleartech.block.entity.reactors.ReactorMk0BlockEntity
+import at.martinthedragon.nucleartech.block.entity.reactors.ReactorMk2BlockEntity
 import at.martinthedragon.nucleartech.block.entity.transmitters.CableBlockEntity
 import at.martinthedragon.nucleartech.block.entity.transmitters.FluidPipeBlockEntity
 import at.martinthedragon.nucleartech.block.multi.MultiBlockPart
@@ -23,6 +24,7 @@ object BlockEntityTypes {
     val steamPressHeadBlockEntityType = BLOCK_ENTITIES.registerK("steam_press_top") { createType(::SteamPressBlockEntity, NTechBlocks.steamPressTop.get()) }
     val blastFurnaceBlockEntityType = BLOCK_ENTITIES.registerK("blast_furnace") { createType(::BlastFurnaceBlockEntity, NTechBlocks.blastFurnace.get()) }
     val combustionGeneratorBlockEntityType = BLOCK_ENTITIES.registerK("combustion_generator") { createType(::CombustionGeneratorBlockEntity, NTechBlocks.combustionGenerator.get()) }
+    val debugTowerEntityType = BLOCK_ENTITIES.registerK("debug_tower") { createType(::DebugTowerBlockEntity, NTechBlocks.debugTowerBlock.get()) }
     val electricFurnaceBlockEntityType = BLOCK_ENTITIES.registerK("electric_furnace") { createType(::ElectricFurnaceBlockEntity, NTechBlocks.electricFurnace.get()) }
     val shredderBlockEntityType = BLOCK_ENTITIES.registerK("shredder") { createType(::ShredderBlockEntity, NTechBlocks.shredder.get()) }
     val assemblerBlockEntityType = BLOCK_ENTITIES.registerK("assembler") { createType(::AssemblerBlockEntity, NTechBlocks.assembler.get()) }
@@ -33,7 +35,10 @@ object BlockEntityTypes {
     val oilDerrickBlockEntityType = BLOCK_ENTITIES.registerK("oil_derrick") { createType(::OilDerrickBlockEntity, NTechBlocks.oilDerrick.get()) }
     val pumpjackBlockEntityType = BLOCK_ENTITIES.registerK("pumpjack") { createType(::PumpjackBlockEntity, NTechBlocks.pumpjack.get()) }
     val radarBlockEntityType = BLOCK_ENTITIES.registerK("radar") { createType(::RadarBlockEntity, NTechBlocks.radar.get()) }
+
     val reactorMk0BlockEntityType = BLOCK_ENTITIES.registerK("reactor_mk0") { createType(::ReactorMk0BlockEntity, NTechBlocks.reactorMk0.get()) }
+    val reactorMk2BlockEntityType = BLOCK_ENTITIES.registerK("reactor_mk2") { createType(::ReactorMk2BlockEntity, NTechBlocks.reactorMk2.get()) }
+
     val centrifugeBlockEntityType = BLOCK_ENTITIES.registerK("centrifuge") { createType(::CentrifugeBlockEntity, NTechBlocks.centrifuge.get()) }
     val cableBlockEntityType = BLOCK_ENTITIES.registerK("cable") { createType(::CableBlockEntity, NTechBlocks.coatedCable.get()) }
     val fluidPipeBlockEntityType = BLOCK_ENTITIES.registerK("fluid_pipe") { createType(::FluidPipeBlockEntity, NTechBlocks.coatedUniversalFluidDuct.get()) }

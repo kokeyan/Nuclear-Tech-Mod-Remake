@@ -6,6 +6,7 @@ import at.martinthedragon.nucleartech.block.entity.BlockEntityTypes
 import at.martinthedragon.nucleartech.block.entity.renderer.*
 import at.martinthedragon.nucleartech.block.entity.renderer.rbmk.*
 import at.martinthedragon.nucleartech.block.entity.renderer.reactor.ReactorMk0Renderer
+import at.martinthedragon.nucleartech.block.entity.renderer.reactor.ReactorMk2Renderer
 import at.martinthedragon.nucleartech.entity.EntityTypes
 import at.martinthedragon.nucleartech.entity.renderer.*
 import at.martinthedragon.nucleartech.extensions.getAverageColor
@@ -22,6 +23,7 @@ import at.martinthedragon.nucleartech.rendering.SpecialModels
 import at.martinthedragon.nucleartech.screen.*
 import at.martinthedragon.nucleartech.screen.rbmk.*
 import at.martinthedragon.nucleartech.screen.reactor.ReactorMk0Screen
+import at.martinthedragon.nucleartech.screen.reactor.ReactorMk2Screen
 import net.minecraft.ChatFormatting
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.screens.MenuScreens
@@ -70,6 +72,7 @@ object ClientRegistries {
         MenuScreens.register(MenuTypes.littleBoyMenu.get(), ::LittleBoyScreen)
         MenuScreens.register(MenuTypes.oilWellMenu.get(), ::OilWellScreen)
         MenuScreens.register(MenuTypes.reactorMk0Menu.get(), ::ReactorMk0Screen)
+        MenuScreens.register(MenuTypes.reactorMk2Menu.get(), ::ReactorMk2Screen)
         MenuScreens.register(MenuTypes.rbmkAutoControlMenu.get(), ::RBMKAutoControlScreen)
         MenuScreens.register(MenuTypes.rbmkBoilerMenu.get(), ::RBMKBoilerScreen)
         MenuScreens.register(MenuTypes.rbmkConsoleMenu.get(), ::RBMKConsoleScreen)
@@ -140,6 +143,7 @@ object ClientRegistries {
             registerBlockEntityRenderer(BlockEntityTypes.assemblerBlockEntityType.get(), ::AssemblerRenderer)
             registerBlockEntityRenderer(BlockEntityTypes.chemPlantBlockEntityType.get(), ::ChemPlantRenderer)
             registerBlockEntityRenderer(BlockEntityTypes.centrifugeBlockEntityType.get(), ::CentrifugeRenderer)
+            registerBlockEntityRenderer(BlockEntityTypes.debugTowerEntityType.get(), ::DebugTowerRenderer)
             registerBlockEntityRenderer(BlockEntityTypes.fatManBlockEntityType.get(), ::FatManRenderer)
             registerBlockEntityRenderer(BlockEntityTypes.largeCoolingTowerBlockEntityType.get(), ::LargeCoolingTowerRenderer)
             registerBlockEntityRenderer(BlockEntityTypes.launchPadBlockEntityType.get(), ::LaunchPadRenderer)
@@ -148,6 +152,7 @@ object ClientRegistries {
             registerBlockEntityRenderer(BlockEntityTypes.pumpjackBlockEntityType.get(), ::PumpjackRenderer)
             registerBlockEntityRenderer(BlockEntityTypes.radarBlockEntityType.get(), ::RadarRenderer)
             registerBlockEntityRenderer(BlockEntityTypes.reactorMk0BlockEntityType.get(), ::ReactorMk0Renderer)
+            registerBlockEntityRenderer(BlockEntityTypes.reactorMk2BlockEntityType.get(), ::ReactorMk2Renderer)
             registerBlockEntityRenderer(BlockEntityTypes.rbmkAbsorberBlockEntityType.get(), ::RBMKAbsorberRenderer)
             registerBlockEntityRenderer(BlockEntityTypes.rbmkAutoControlBlockEntityType.get(), ::RBMKAutoControlRenderer)
             registerBlockEntityRenderer(BlockEntityTypes.rbmkBlankBlockEntityType.get(), ::RBMKBlankRenderer)
@@ -172,6 +177,8 @@ object ClientRegistries {
             registerEntityRenderer(EntityTypes.falloutRain.get(), ::NoopRenderer)
             registerEntityRenderer(EntityTypes.nuclearCreeper.get(), ::NuclearCreeperRenderer)
 
+            registerEntityRenderer(EntityTypes.missileAntiBalistic.get(), ::SimpleMissileRenderer)
+            registerEntityRenderer(EntityTypes.missileAntiBallisticShort.get(), ::SimpleMissileRenderer)
             registerEntityRenderer(EntityTypes.missileHE.get(), ::SimpleMissileRenderer)
             registerEntityRenderer(EntityTypes.missileIncendiary.get(), ::SimpleMissileRenderer)
             registerEntityRenderer(EntityTypes.missileCluster.get(), ::SimpleMissileRenderer)

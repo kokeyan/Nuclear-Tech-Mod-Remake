@@ -880,6 +880,12 @@ class NuclearItemModelProvider(
         getBuilder(NTechBlockItems.glowingMushroomStem.id.path).parent(cubeAll).texture("all", blockTexture(NTechBlocks.glowingMushroomStem.get()))
         simpleItem(NTechBlockItems.steamPress.get())
         // TODO make a template type of thing
+        specialEntityItem(NTechBlockItems.reactorMk2Placer.get()).transforms()
+            .transform(ItemTransforms.TransformType.GUI).rotation(30F, 225F, 0F).translation(3F, -2F, 0F).scale(.17F).end()
+            .transform(ItemTransforms.TransformType.GROUND).translation(0F, 3F, 0F).scale(.25F, .25F, .25F).end()
+            .transform(ItemTransforms.TransformType.FIXED).rotation(0F, 90F, 0F).scale(.5F).end()
+            .transform(ItemTransforms.TransformType.THIRD_PERSON_RIGHT_HAND).rotation(75F, 45F, 0F).translation(0F, 2.5F, 0F).scale(.375F, .375F, .375F).end()
+            .transform(ItemTransforms.TransformType.FIRST_PERSON_RIGHT_HAND).rotation(0F, 45F, 0F).scale(.4F, .4F, .4F).end().end()
         specialEntityItem(NTechBlockItems.reactorMk0Placer.get()).transforms()
             .transform(ItemTransforms.TransformType.GUI).rotation(30F, 225F, 0F).translation(3F, -2F, 0F).scale(.17F).end()
             .transform(ItemTransforms.TransformType.GROUND).translation(0F, 3F, 0F).scale(.25F, .25F, .25F).end()

@@ -3,6 +3,7 @@ package at.martinthedragon.nucleartech.menu
 import at.martinthedragon.nucleartech.RegistriesAndLifecycle.MENUS
 import at.martinthedragon.nucleartech.menu.rbmk.*
 import at.martinthedragon.nucleartech.menu.reactor.ReactorMk0Menu
+import at.martinthedragon.nucleartech.menu.reactor.ReactorMk2Menu
 import at.martinthedragon.nucleartech.registerK
 import net.minecraftforge.common.extensions.IForgeMenuType
 
@@ -21,7 +22,10 @@ object MenuTypes {
     val oilWellMenu = MENUS.registerK("oil_well") { IForgeMenuType.create(OilWellMenu::fromNetwork) }
     val centrifugeMenu = MENUS.registerK("centrifuge") { IForgeMenuType.create(CentrifugeMenu::fromNetwork) }
     val radarMenu = MENUS.registerK("radar") { IForgeMenuType.create(RadarMenu::fromNetwork) }
+
     val reactorMk0Menu = MENUS.registerK("reactor_mk0") { IForgeMenuType.create(ReactorMk0Menu::fromNetwork) }
+    val reactorMk2Menu = MENUS.registerK("reactor_mk2") { IForgeMenuType.create(ReactorMk2Menu::fromNetwork) }
+
     val rbmkRodMenu = MENUS.registerK("rbmk_rod") { IForgeMenuType.create(RBMKRodMenu::fromNetwork) }
     val rbmkBoilerMenu = MENUS.registerK("rbmk_boiler") { IForgeMenuType.create(RBMKBoilerMenu::fromNetwork) }
     val rbmkManualControlMenu = MENUS.registerK("rbmk_manual_control") { IForgeMenuType.create(RBMKManualControlMenu::fromNetwork) }

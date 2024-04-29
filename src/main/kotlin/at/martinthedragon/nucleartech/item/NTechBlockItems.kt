@@ -6,8 +6,10 @@ import at.martinthedragon.nucleartech.block.*
 import at.martinthedragon.nucleartech.block.entity.*
 import at.martinthedragon.nucleartech.block.entity.rbmk.*
 import at.martinthedragon.nucleartech.block.entity.reactors.ReactorMk0BlockEntity
+import at.martinthedragon.nucleartech.block.entity.reactors.ReactorMk2BlockEntity
 import at.martinthedragon.nucleartech.block.rbmk.RBMKConsoleBlock
 import at.martinthedragon.nucleartech.block.reactors.ReactorMk0Block
+import at.martinthedragon.nucleartech.block.reactors.ReactorMk2Block
 import at.martinthedragon.nucleartech.registerK
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Item
@@ -132,6 +134,7 @@ object NTechBlockItems {
         NTechBlocks.euphemiumEtchedSchrabidiumCluster.get(), Item.Properties().tab(CreativeTabs.Blocks)) }
     val magnetizedTungstenBlock = ITEMS.registerK("magnetized_tungsten_block") { BlockItem(NTechBlocks.magnetizedTungstenBlock.get(), Item.Properties().tab(CreativeTabs.Blocks)) }
     val combineSteelBlock = ITEMS.registerK("combine_steel_block") { BlockItem(NTechBlocks.combineSteelBlock.get(), Item.Properties().tab(CreativeTabs.Blocks)) }
+    val debugTowerBlock = ITEMS.registerK("debug_tower") { SpecialModelMultiBlockPlacerItem(NTechBlocks.debugTowerBlock.get(), ::DebugTowerBlockEntity, DebugTowerBlock::placeMultiBlock, Item.Properties().tab(CreativeTabs.Blocks)) }
     val deshReinforcedBlock = ITEMS.registerK("desh_reinforced_block") { BlockItem(NTechBlocks.deshReinforcedBlock.get(), Item.Properties().tab(CreativeTabs.Blocks)) }
     val starmetalBlock = ITEMS.registerK("starmetal_block") { BlockItem(NTechBlocks.starmetalBlock.get(), Item.Properties().tab(CreativeTabs.Blocks)) }
     val australiumBlock = ITEMS.registerK("australium_block") { BlockItem(NTechBlocks.australiumBlock.get(), Item.Properties().tab(CreativeTabs.Blocks)) }
@@ -198,6 +201,7 @@ object NTechBlockItems {
     val assemblerPlacer = ITEMS.registerK("assembler") { SpecialModelMultiBlockPlacerItem(NTechBlocks.assembler.get(), ::AssemblerBlockEntity, AssemblerBlock::placeMultiBlock, Item.Properties().tab(CreativeTabs.Machines)) }
     val chemPlantPlacer = ITEMS.registerK("chem_plant") { SpecialModelMultiBlockPlacerItem(NTechBlocks.chemPlant.get(), ::ChemPlantBlockEntity, ChemPlantBlock::placeMultiBlock, Item.Properties().tab(CreativeTabs.Machines)) }
     val reactorMk0Placer = ITEMS.registerK("reactor_mk0") { SpecialModelMultiBlockPlacerItem(NTechBlocks.reactorMk0.get(), ::ReactorMk0BlockEntity, ReactorMk0Block::placeMultiBlock, Item.Properties().tab(CreativeTabs.Machines)) }
+    val reactorMk2Placer = ITEMS.registerK("reactor_mk2") { SpecialModelMultiBlockPlacerItem(NTechBlocks.reactorMk2.get(), ::ReactorMk2BlockEntity, ReactorMk2Block::placeMultiBlock, Item.Properties().tab(CreativeTabs.Machines)) }
     val turbine = ITEMS.registerK("turbine") { AutoTooltippedBlockItem(NTechBlocks.turbine.get(), Item.Properties().tab(CreativeTabs.Machines)) }
     val smallCoolingTower = ITEMS.registerK("small_cooling_tower") { SpecialModelMultiBlockPlacerItem(NTechBlocks.smallCoolingTower.get(), ::SmallCoolingTowerBlockEntity, SmallCoolingTowerBlock::placeMultiBlock, Item.Properties().tab(CreativeTabs.Machines), 2F) }
     val largeCoolingTower = ITEMS.registerK("large_cooling_tower") { SpecialModelMultiBlockPlacerItem(NTechBlocks.largeCoolingTower.get(), ::LargeCoolingTowerBlockEntity, LargeCoolingTowerBlock::placeMultiBlock, Item.Properties().tab(CreativeTabs.Machines), 4F) }

@@ -1,7 +1,6 @@
 package at.martinthedragon.nucleartech.networking
 
-import at.martinthedragon.nucleartech.NuclearTech
-import at.martinthedragon.nucleartech.block.entity.reactors.ReactorMk0BlockEntity
+import at.martinthedragon.nucleartech.block.entity.reactors.FluxBasedReactor
 import net.minecraft.core.BlockPos
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraftforge.network.NetworkEvent
@@ -16,7 +15,7 @@ class Mk0FluxUpdatedMessage(val flux: Double, val pos: BlockPos) : NetworkMessag
     override fun handle(context: Supplier<NetworkEvent.Context>) {
         if (context.get().direction.receptionSide.isServer) context.get().enqueueWork {
             val be = context.get().sender?.level?.getBlockEntity(pos)
-            if (be is ReactorMk0BlockEntity) {
+            if (be is FluxBasedReactor) {
                 be.flux = flux
                 be.sendContinuousUpdatePacket()
             }

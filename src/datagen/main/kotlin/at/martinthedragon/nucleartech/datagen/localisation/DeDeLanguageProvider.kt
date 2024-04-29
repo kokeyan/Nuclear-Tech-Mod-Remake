@@ -209,6 +209,7 @@ class DeDeLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
         addBlock(NTechFluids.oil.block, "Rohöl")
         addBlock(NTechFluids.uraniumHexafluoride.block, "Uranhexafluorid")
         addBlock(NTechFluids.corium.block, "Corium")
+        addBlock(NTechFluids.coolant.block, "Coolant")
         addBlock(NTechFluids.volcanicLava.block, "Vulkanische Lava")
 
         addBlock(NTechBlocks.decoRbmkBlock, "RBMK Dekorationsblock")
@@ -947,6 +948,7 @@ class DeDeLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
         addItem(NTechFluids.oil.bucket, "Rohöleimer")
         addItem(NTechFluids.uraniumHexafluoride.bucket, "Uranhexafluorideimer")
         addItem(NTechFluids.corium.bucket, "Coriumeimer")
+        addItem(NTechFluids.coolant.bucket, "Coolant")
         addItem(NTechFluids.volcanicLava.bucket, "Vulkanische-Lava-Eimer")
 
         addItem(NTechItems.creativeNuclearExplosionSpawner, "Atomexplosionserzeuger")
@@ -996,6 +998,8 @@ class DeDeLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
         add(LangKeys.CONTAINER_RADAR, "Radar")
         //@TODO(DeDe)
         add(LangKeys.CONTAINER_REACTOR_MK0, "Reactor Mk0")
+        //@TODO(DeDe)
+        add(LangKeys.CONTAINER_REACTOR_MK2, "Reactor Mk2")
         addMenuType(MenuTypes.centrifugeMenu, "Zentrifuge")
         addMenuType(MenuTypes.rbmkRodMenu, "RBMK Brennstäbe")
         add(LangKeys.CONTAINER_RBMK_REASIM_ROD, "RBMK ReaSim Brennstäbe")

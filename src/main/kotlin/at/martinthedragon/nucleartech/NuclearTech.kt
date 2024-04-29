@@ -2,6 +2,7 @@ package at.martinthedragon.nucleartech
 
 import at.martinthedragon.nucleartech.config.NuclearConfig
 import at.martinthedragon.nucleartech.item.NTechItems
+import at.martinthedragon.nucleartech.logging.debugY
 import at.martinthedragon.nucleartech.networking.NuclearPacketHandler
 import com.mojang.logging.LogUtils
 import net.minecraftforge.common.MinecraftForge
@@ -24,7 +25,6 @@ class NuclearTech {
     companion object {
         const val MODID = "nucleartech"
         val LOGGER: Logger = LogUtils.getLogger()
-
         val polaroidID: Int get() = NTechItems.polaroid.get().id + 1
         val polaroidBroken: Boolean get() = polaroidID == 11
 

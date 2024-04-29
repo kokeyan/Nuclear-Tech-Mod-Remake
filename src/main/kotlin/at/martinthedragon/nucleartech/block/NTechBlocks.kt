@@ -5,6 +5,7 @@ import at.martinthedragon.nucleartech.block.multi.MultiBlockPart
 import at.martinthedragon.nucleartech.block.multi.MultiBlockPort
 import at.martinthedragon.nucleartech.block.rbmk.*
 import at.martinthedragon.nucleartech.block.reactors.ReactorMk0Block
+import at.martinthedragon.nucleartech.block.reactors.ReactorMk2Block
 import at.martinthedragon.nucleartech.hazard.HazardRegistry
 import at.martinthedragon.nucleartech.registerK
 import net.minecraft.core.BlockPos
@@ -138,6 +139,7 @@ object NTechBlocks {
     val euphemiumEtchedSchrabidiumCluster = BLOCKS.registerK("euphemium_etched_schrabidium_cluster") { Block(Properties.of(METAL).strength(6f).requiresCorrectToolForDrops().sound(SoundType.METAL)) }
     val magnetizedTungstenBlock = BLOCKS.registerK("magnetized_tungsten_block") { Block(Properties.of(METAL).strength(6f).requiresCorrectToolForDrops().sound(SoundType.METAL)) }
     val combineSteelBlock = BLOCKS.registerK("combine_steel_block") { Block(Properties.of(METAL).strength(6f).requiresCorrectToolForDrops().sound(SoundType.METAL)) }
+    val debugTowerBlock = BLOCKS.registerK("debug_tower") { DebugTowerBlock(Properties.of(METAL).strength(6f).noOcclusion().requiresCorrectToolForDrops().sound(SoundType.METAL)) }
     val deshReinforcedBlock = BLOCKS.registerK("desh_reinforced_block") { Block(Properties.of(METAL).strength(6f).requiresCorrectToolForDrops().sound(SoundType.METAL)) }
     val starmetalBlock = BLOCKS.registerK("starmetal_block") { Block(Properties.of(METAL).strength(6f).requiresCorrectToolForDrops().sound(SoundType.METAL)) }
     val australiumBlock = BLOCKS.registerK("australium_block") { Block(Properties.of(METAL).strength(6f).requiresCorrectToolForDrops().sound(SoundType.METAL)) }
@@ -211,6 +213,7 @@ object NTechBlocks {
     val centrifuge = BLOCKS.registerK("centrifuge") { CentrifugeBlock(Properties.of(METAL).strength(5F).requiresCorrectToolForDrops().sound(SoundType.METAL).noOcclusion()) }
 
     val reactorMk0 = BLOCKS.registerK("reactor_mk0") { ReactorMk0Block(Properties.of(METAL).strength(5F).requiresCorrectToolForDrops().sound(SoundType.METAL).noOcclusion()) }
+    val reactorMk2 = BLOCKS.registerK("reactor_mk2") { ReactorMk2Block(Properties.of(METAL).strength(5F).requiresCorrectToolForDrops().sound(SoundType.METAL).noOcclusion()) }
 
     val ironAnvil = BLOCKS.registerK("iron_anvil") { AnvilBlock(1, Properties.of(METAL).strength(5F, 100F).requiresCorrectToolForDrops().sound(SoundType.ANVIL)) }
     val leadAnvil = BLOCKS.registerK("lead_anvil") { AnvilBlock(1, Properties.of(METAL).strength(5F, 100F).requiresCorrectToolForDrops().sound(SoundType.ANVIL)) }

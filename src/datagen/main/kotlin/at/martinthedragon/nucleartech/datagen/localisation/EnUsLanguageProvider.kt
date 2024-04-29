@@ -223,6 +223,7 @@ class EnUsLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
         addBlock(NTechFluids.gas.block, "Natural Gas")
         addBlock(NTechFluids.uraniumHexafluoride.block, "Uranium Hexafluoride")
         addBlock(NTechFluids.corium.block, "Corium")
+        addBlock(NTechFluids.coolant.block, "Coolant")
         addBlock(NTechFluids.volcanicLava.block, "Volcanic Lava")
 
         addItem(NTechItems.rawThorium, "Raw Thorium")
@@ -889,6 +890,7 @@ class EnUsLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
         addItem(NTechFluids.oil.bucket, "Crude Oil Bucket")
         addItem(NTechFluids.uraniumHexafluoride.bucket, "Uranium Hexafluoride Bucket")
         addItem(NTechFluids.corium.bucket, "Corium Bucket")
+        addItem(NTechFluids.coolant.bucket, "Coolant Bucket")
         addItem(NTechFluids.volcanicLava.bucket, "Volcanic Lava Bucket")
 
         addItem(NTechItems.creativeNuclearExplosionSpawner, "Nuclear Explosion Spawner")
@@ -936,6 +938,7 @@ class EnUsLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
         add(LangKeys.CONTAINER_PUMPJACK, "Pumpjack")
         add(LangKeys.CONTAINER_RADAR, "Radar")
         add(LangKeys.CONTAINER_REACTOR_MK0, "Reactor Mk0")
+        add(LangKeys.CONTAINER_REACTOR_MK2, "Reactor Mk2")
         addMenuType(MenuTypes.centrifugeMenu, "Centrifuge")
         addMenuType(MenuTypes.rbmkRodMenu, "RBMK Fuel Rod")
         add(LangKeys.CONTAINER_RBMK_REASIM_ROD, "RBMK Fuel Rod (ReaSim)")

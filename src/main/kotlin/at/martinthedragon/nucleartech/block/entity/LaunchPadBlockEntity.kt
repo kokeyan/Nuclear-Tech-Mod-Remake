@@ -8,6 +8,8 @@ import at.martinthedragon.nucleartech.api.block.entities.TickingServerBlockEntit
 import at.martinthedragon.nucleartech.api.item.TargetDesignator
 import at.martinthedragon.nucleartech.energy.EnergyStorageExposed
 import at.martinthedragon.nucleartech.energy.transferEnergy
+import at.martinthedragon.nucleartech.entity.missile.AbstractAntiBallisticMissile
+import at.martinthedragon.nucleartech.item.ABMissileItem
 import at.martinthedragon.nucleartech.item.MissileItem
 import at.martinthedragon.nucleartech.menu.LaunchPadMenu
 import at.martinthedragon.nucleartech.menu.NTechContainerMenu
@@ -65,9 +67,10 @@ class LaunchPadBlockEntity(pos: BlockPos, state: BlockState) : BaseMachineBlockE
 
     override val requiresComponentsToDetonate = true
     override fun getRequiredDetonationComponents(): Map<out Supplier<out Item>, Int> = emptyMap()
-    override fun isComplete() = !mainInventory[0].isEmpty && !mainInventory[1].isEmpty
+    override fun isComplete() = mainInventory[0].item is ABMissileItem<*> || (!mainInventory[0].isEmpty && !mainInventory[1].isEmpty)
     override fun canDetonate(): Boolean {
         if (!super.canDetonate() || energy < LAUNCH_ENERGY_COST || mainInventory[0].item !is MissileItem<*>) return false
+        if (mainInventory[0].item is ABMissileItem<*>) return true
         val designator = mainInventory[1]
         if (designator.item !is TargetDesignator || !designator.hasTag()) return false
         return true
@@ -78,6 +81,16 @@ class LaunchPadBlockEntity(pos: BlockPos, state: BlockState) : BaseMachineBlockE
         if (level == null || level.isClientSide) return false
 
         val missile = mainInventory[0].item as? MissileItem<*> ?: return false
+        if (missile is ABMissileItem<*>) {
+            level.playSound(null, worldPosition, SoundEvents.missileTakeoff.get(), SoundSource.BLOCKS, 2F, 1F)
+            if (!level.addFreshEntity(missile.missileSupplier(level, blockPos.above(2), blockPos))) return false
+
+            mainInventory[0].shrink(1)
+            energy -= LAUNCH_ENERGY_COST
+            setChanged()
+            sendContinuousUpdatePacket()
+            return true
+        }
         val designator = mainInventory[1].item as? TargetDesignator ?: return false
         val designatorTag = mainInventory[1].tag ?: return false
         if (!designator.hasValidTarget(level, designatorTag, blockPos)) return false

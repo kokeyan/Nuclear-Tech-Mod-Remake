@@ -54,6 +54,7 @@ class BlockLoots : BlockLoot() {
         dropSelf(NTechBlocks.reiite.get())
         dropSelf(NTechBlocks.brightblendeOre.get())
         dropSelf(NTechBlocks.dellite.get())
+        dropSelf(NTechBlocks.debugTowerBlock.get())
         dropSelf(NTechBlocks.dollarGreenMineral.get())
         add(NTechBlocks.rareEarthOre.get()) { createOreDrop(it, NTechItems.rawRareEarth.get()) }
         add(NTechBlocks.cobaltOre.get()) { createOreDrop(it, NTechItems.rawCobalt.get()) }
@@ -263,6 +264,7 @@ class BlockLoots : BlockLoot() {
         dropSelf(NTechBlocks.oilDerrick.get())
         dropSelf(NTechBlocks.pumpjack.get())
         dropSelf(NTechBlocks.reactorMk0.get())
+        dropSelf(NTechBlocks.reactorMk2.get())
         dropSelf(NTechBlocks.radar.get())
         dropSelf(NTechBlocks.centrifuge.get())
 

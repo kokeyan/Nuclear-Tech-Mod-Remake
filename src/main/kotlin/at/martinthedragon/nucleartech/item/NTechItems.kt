@@ -781,8 +781,8 @@ object NTechItems {
     // Rocketry: Missiles and Satellites
 
     val designator = ITEMS.registerK("designator") { DesignatorItem(Properties().tab(CreativeTabs.Rocketry).stacksTo(1)) }
-    val antiBallisticMissile = ITEMS.registerK("anti_ballistic_missile") { MissileItem(::AntiBallisticMissile, Properties().tab(CreativeTabs.Rocketry)) }
-    val antiBallisticMissileShort = ITEMS.registerK("anti_ballistic_missile_short") { MissileItem(::AntiBallisticMissileShort, Properties().tab(CreativeTabs.Rocketry)) }
+    val antiBallisticMissile = ITEMS.registerK("anti_ballistic_missile") { ABMissileItem(::AntiBallisticMissile, Properties().tab(CreativeTabs.Rocketry), renderModel = AbstractMissile.MODEL_MISSILE_RIM67B, missileTexture = AbstractMissile.missileTexture("missile_rim67b")) }
+    val antiBallisticMissileShort = ITEMS.registerK("anti_ballistic_missile_short") { ABMissileItem(::AntiBallisticMissileShort, Properties().tab(CreativeTabs.Rocketry), renderModel = AbstractMissile.MODEL_MISSILE_RIM67B, missileTexture = AbstractMissile.missileTexture("missile_rim67b")) }
     val heMissile = ITEMS.registerK("he_missile") { MissileItem(::HEMissile, Properties().tab(CreativeTabs.Rocketry)) }
     val incendiaryMissile = ITEMS.registerK("incendiary_missile") { MissileItem(::IncendiaryMissile, Properties().tab(CreativeTabs.Rocketry)) }
     val clusterMissile = ITEMS.registerK("cluster_missile") { MissileItem(::ClusterMissile, Properties().tab(CreativeTabs.Rocketry)) }
