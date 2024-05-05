@@ -1350,20 +1350,20 @@ class JaJpLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
         addMaterial(verticium, "Verticium")
         addMaterial(weidanium, "Weidanium")
         addMaterial(whitePhosphorus, "White Phosphorus")
-        addMaterial(yellowcake, "Yellowcake")
+        addMaterial(yellowcake, "イエローケーキ")
     }
 
-    override val spawnEggFormat = "%s Spawn Egg"
+    override val spawnEggFormat = "%sのスポーンエッグ"
 
-    override val oreFormat = "%s Ore"
-    override val deepOreFormat = "Deepslate %s Ore"
-    override val blockFormat = "Block of %s"
-    override val rawFormat = "Raw %s"
-    override val ingotFormat = "%s Ingot"
-    override val billetFormat = "%s Billet"
-    override val nuggetFormat = "%s Nugget"
-    override val crystalsFormat = "%s Crystals"
-    override val powderFormat = "%s Powder"
-    override val plateFormat = "%s Plate"
-    override val wireFormat = "%s Wire"
+    override val oreFormat = "%s鉱石"
+    override val deepOreFormat = "深層%s鉱石"
+    override val blockFormat = "%sブロック"
+    override val rawFormat = "%sの原石"
+    override val ingotFormat = "%sインゴット"
+    override val billetFormat = "%sビレット"
+    override val nuggetFormat = "%sの塊"
+    override val crystalsFormat = "%sクリスタル"
+    override val powderFormat = "%sの粉"
+    override val plateFormat = "%sの板"
+    override val wireFormat = "%sのワイヤー"
 }
