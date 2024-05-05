@@ -86,10 +86,10 @@ class JaJpLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
 
         addBlock(NTechBlocks.scorchedDeepslateUraniumOre, "焦げた深層ウラン鉱石")
         addBlock(NTechBlocks.deepslateOilDeposit, "深層石油鉱床")
-        addBlockDesc(NTechBlocks.deepslateOilDeposit, "あなたはこれほど深くてもまだ\n何をすればいいのかわからないのですか？ え?!")
+        addBlockDesc(NTechBlocks.deepslateOilDeposit, "こんな深くまで来たのに何をすればいいかわかってないの...?w")
         addBlock(NTechBlocks.emptyDeepslateOilDeposit, "空の深層石油鉱床")
-        addBlock(NTechBlocks.deepslateAustralianOre, "Deepslate Australian Ore")
-        addBlockDesc(NTechBlocks.deepslateAustralianOre, "Australium Ore")
+        addBlock(NTechBlocks.deepslateAustralianOre, "深層オーストラリウム鉱石")
+        addBlockDesc(NTechBlocks.deepslateAustralianOre, "オーストラリウムの鉱石")
         addBlock(NTechBlocks.deepslateRareEarthOre, "深層レアアース鉱石")
 
         addBlock(NTechBlocks.whitePhosphorusBlock, "白リンの塊")
@@ -101,9 +101,9 @@ class JaJpLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
         addBlock(NTechBlocks.fiberglassRoll, "ファイバーグラスロール")
         addBlock(NTechBlocks.trinititeBlock, "トリニタイトブロック")
         addBlock(NTechBlocks.nuclearWasteBlock, "核廃棄物ブロック")
-        addBlock(NTechBlocks.schrabidiumCluster, "ジュラビジウムクラスター")
-        addBlock(NTechBlocks.euphemiumEtchedSchrabidiumCluster, "Euphemium Etched Schrabidium Cluster")
-        addBlock(NTechBlocks.deshReinforcedBlock, "Block of Reinforced Desh")
+        addBlock(NTechBlocks.schrabidiumCluster, "ジュラビジウム結晶")
+        addBlock(NTechBlocks.euphemiumEtchedSchrabidiumCluster, "含ユーフェミウムシュラビジウム結晶")
+        addBlock(NTechBlocks.deshReinforcedBlock, "強化デッシュのブロック")
 
         addBlock(NTechBlocks.titaniumDecoBlock, "チタニウムデコブロック")
         addBlock(NTechBlocks.redCopperDecoBlock, "赤銅デコブロック")
@@ -178,7 +178,7 @@ class JaJpLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
         addBlock(NTechBlocks.decoRbmkBlock, "RBMKデコレーションブロック")
         addBlock(NTechBlocks.decoRbmkSmoothBlock, "Smooth RBMKデコレーションブロック")
 
-        addBlock(NTechBlocks.rbmkColumn, "RBMK Column Part")
+        addBlock(NTechBlocks.rbmkColumn, "RBMK 構造柱")
         addBlock(NTechBlocks.rbmkRod, "RBMK 燃料棒")
         addBlock(NTechBlocks.rbmkModeratedRod, "RBMK 減速燃料棒")
         addBlock(NTechBlocks.rbmkReaSimRod, "RBMK Fuel Rod (ReaSim)")
