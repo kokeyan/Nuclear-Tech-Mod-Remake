@@ -181,14 +181,14 @@ class JaJpLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
         addBlock(NTechBlocks.rbmkColumn, "RBMK 構造柱")
         addBlock(NTechBlocks.rbmkRod, "RBMK 燃料棒")
         addBlock(NTechBlocks.rbmkModeratedRod, "RBMK 減速燃料棒")
-        addBlock(NTechBlocks.rbmkReaSimRod, "RBMK Fuel Rod (ReaSim)")
-        addBlock(NTechBlocks.rbmkModeratedReaSimRod, "RBMK Moderated Fuel Rod (ReaSim)")
-        addBlock(NTechBlocks.rbmkReflector, "RBMK Tungsten Carbide Neutron Reflector")
-        addBlock(NTechBlocks.rbmkModerator, "RBMK Graphite Moderator")
-        addBlock(NTechBlocks.rbmkAbsorber, "RBMK Boron Neutron Absorber")
-        addBlock(NTechBlocks.rbmkBoilerColumn, "RBMK Steam Channel Part")
-        addBlock(NTechBlocks.rbmkBoiler, "RBMK Steam Channel")
-        addBlock(NTechBlocks.rbmkBlank, "RBMK Structural Column")
+        addBlock(NTechBlocks.rbmkReaSimRod, "RBMK 燃料棒レジーム")
+        addBlock(NTechBlocks.rbmkModeratedReaSimRod, "RBMK 減速燃料棒レジーム")
+        addBlock(NTechBlocks.rbmkReflector, "RBMK 炭化タングステン製中性子反射鏡")
+        addBlock(NTechBlocks.rbmkModerator, "RBMK 黒鉛モデレーター")
+        addBlock(NTechBlocks.rbmkAbsorber, "RBMK ホウ素中性子吸収材")
+        addBlock(NTechBlocks.rbmkBoilerColumn, "RBMK 蒸気経路部品")
+        addBlock(NTechBlocks.rbmkBoiler, "RBMK 蒸気経路")
+        addBlock(NTechBlocks.rbmkBlank, "RBMK 構造柱2")
         addBlock(NTechBlocks.rbmkManualControlRod, "RBMK Control Rods")
         addBlock(NTechBlocks.rbmkModeratedControlRod, "RBMK Moderated Control Rods")
         addBlock(NTechBlocks.rbmkAutoControlRod, "RBMK Automatic Control Rods")
@@ -1350,20 +1350,20 @@ class JaJpLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
         addMaterial(verticium, "Verticium")
         addMaterial(weidanium, "Weidanium")
         addMaterial(whitePhosphorus, "White Phosphorus")
-        addMaterial(yellowcake, "イエローケーキ")
+        addMaterial(yellowcake, "Yellowcake")
     }
 
-    override val spawnEggFormat = "%sのスポーンエッグ"
+    override val spawnEggFormat = "%s Spawn Egg"
 
-    override val oreFormat = "%s鉱石"
-    override val deepOreFormat = "深層%s鉱石"
-    override val blockFormat = "%sブロック"
-    override val rawFormat = "%sの原石"
-    override val ingotFormat = "%sインゴット"
-    override val billetFormat = "%sビレット"
-    override val nuggetFormat = "%sの塊"
-    override val crystalsFormat = "%sクリスタル"
-    override val powderFormat = "%sの粉"
-    override val plateFormat = "%sの板"
-    override val wireFormat = "%sのワイヤー"
+    override val oreFormat = "%s Ore"
+    override val deepOreFormat = "Deepslate %s Ore"
+    override val blockFormat = "Block of %s"
+    override val rawFormat = "Raw %s"
+    override val ingotFormat = "%s Ingot"
+    override val billetFormat = "%s Billet"
+    override val nuggetFormat = "%s Nugget"
+    override val crystalsFormat = "%s Crystals"
+    override val powderFormat = "%s Powder"
+    override val plateFormat = "%s Plate"
+    override val wireFormat = "%s Wire"
 }
