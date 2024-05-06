@@ -30,15 +30,15 @@ class JaJpLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
     }
 
     override fun translate() {
-        addCreativeTab(CreativeTabs.Parts, "NTM リソースとパーツ")
-        addCreativeTab(CreativeTabs.Items, "NTM マシンのアイテムと燃料")
-        addCreativeTab(CreativeTabs.Templates, "NTM テンプレート")
-        addCreativeTab(CreativeTabs.Blocks, "NTM 鉱石とブロック")
-        addCreativeTab(CreativeTabs.Machines, "NTM マシン")
-        addCreativeTab(CreativeTabs.Bombs, "NTM 爆弾")
-        addCreativeTab(CreativeTabs.Rocketry, "NTM ミサイルとサテライト")
-        addCreativeTab(CreativeTabs.Consumables, "NTM ギアと消耗品")
-        addCreativeTab(CreativeTabs.Miscellaneous, "NTM その他のアイテム")
+        addCreativeTab(CreativeTabs.Parts, "NTMの資源と素材")
+        addCreativeTab(CreativeTabs.Items, "NTMの機械アイテムや燃料")
+        addCreativeTab(CreativeTabs.Templates, "NTMのテンプレート")
+        addCreativeTab(CreativeTabs.Blocks, "NTMのブロック")
+        addCreativeTab(CreativeTabs.Machines, "NTMの機械")
+        addCreativeTab(CreativeTabs.Bombs, "NTMの爆弾")
+        addCreativeTab(CreativeTabs.Rocketry, "NTMのミサイルや衛生")
+        addCreativeTab(CreativeTabs.Consumables, "NTMのギアと消耗品")
+        addCreativeTab(CreativeTabs.Miscellaneous, "NTM その他")
 
         addMaterials()
 
