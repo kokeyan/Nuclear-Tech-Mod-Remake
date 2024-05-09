@@ -36,7 +36,7 @@ class JaJpLanguageProvider(dataGenerator: DataGenerator) : NuclearLanguageProvid
         addCreativeTab(CreativeTabs.Blocks, "NTMのブロック")
         addCreativeTab(CreativeTabs.Machines, "NTMの機械")
         addCreativeTab(CreativeTabs.Bombs, "NTMの爆弾")
-        addCreativeTab(CreativeTabs.Rocketry, "NTMのミサイルや衛生")
+        addCreativeTab(CreativeTabs.Rocketry, "NTMのミサイルや衛星")
         addCreativeTab(CreativeTabs.Consumables, "NTMのギアと消耗品")
         addCreativeTab(CreativeTabs.Miscellaneous, "NTM その他")
 
